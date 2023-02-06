@@ -1,3 +1,4 @@
+## Problem formulation
 We consider the scheduling problem, where operations (jobs) can be parallelized and energy consumption is taken into account. 
 Execution of a job at a slower speed is more energy efficient, but leads to a longer processing time and increases 
 scheduling metrics.
@@ -15,6 +16,7 @@ If job j uses size_j processors, then the processing volumes are the same for al
 The aim is to find a feasible schedule with the minimum sum of completion times so that the energy consumption
 is not greater than a given energy budget E.
 
+## Local improvements
 We suggest local improvements for the given solution of an instance of this problem. The local impovements have two strategies:
 
 1) Consider blocks from the solution sequentially. If the current block is odd  (i.e. contains odd number of single-processor jobs), 
@@ -24,8 +26,9 @@ then we move the last single-processor job of the block to the beginning of the 
 containing at least one single-processor job (if it is possible). The job should be assigned as the first job to the processor with maximum idle time. 
 If the duration of the block b_n is not changed, then we do not consider this block at the subsequent steps even if this block contains odd number of single-processor jobs.
 
+## Examples
 This repository contains two examples: 
-- The example from directory `Strategy 1 is better` presents a job order, for which the frist strategy has better result than the secodn strategy.
+- The example from directory `Strategy 1 is better` presents a job order, for which the frist strategy has better result than the second strategy.
 - The example from directory `Strategy 2 is better` presents a job order, for which the second strategy has better result than the first strategy.
 
 Each screenshot shows an order for 10 jobs. Each job is presented in format [p, w, d], 
